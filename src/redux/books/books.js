@@ -26,7 +26,6 @@ export const getBooks = () => async (dispatch) => {
     title: booksObj[book][0].title,
     category: booksObj[book][0].category,
   }));
-  console.log(fetchedBooks);
   await dispatch({
     type: GET_BOOKS,
     payload: fetchedBooks,
