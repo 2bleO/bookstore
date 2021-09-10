@@ -25,6 +25,9 @@ export const getBooks = () => async (dispatch) => {
     id: book,
     title: booksObj[book][0].title,
     category: booksObj[book][0].category,
+    author: 'SomeOne',
+    progress: '15%',
+    currentChapter: 'Chapter 5',
   }));
   await dispatch({
     type: GET_BOOKS,
@@ -41,6 +44,9 @@ export const addBook = (payload) => async (dispatch) => {
       item_id: payload.id,
       title: payload.title,
       category: payload.category,
+      author: payload.author,
+      progress: payload.progress,
+      currentChapter: payload.currentChapter,
     }),
   });
 
