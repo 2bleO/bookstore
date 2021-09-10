@@ -1,3 +1,4 @@
+import './books.css';
 import { useState, useEffect, React } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as UUID } from 'uuid';
@@ -27,23 +28,25 @@ const Books = () => {
       id: UUID(),
       title,
       category,
+      author: 'SomeOne',
+      progress: '15%',
+      currentChapter: 'Chapter 5',
     };
     dispatch(addBook(newBook));
   };
 
   return (
     <>
-      <h3>All Books</h3>
-      <form>
-        <h4>Add New Book</h4>
-        <ul>
-          { books.map((book) => (
-            <Book key={book.id} props={book} />
-          ))}
-        </ul>
-        <input placeholder="Title" onChange={setBookTitle} />
-        <input placeholder="Category" onChange={setBookCategory} />
-        <button type="button" onClick={submitBookToStore}>Add Book</button>
+      <ul>
+        { books.map((book) => (
+          <Book key={book.id} props={book} />
+        ))}
+      </ul>
+      <form className="add-book-form">
+        <h4 className="add-new-book">Add New Book</h4>
+        <input placeholder="Title" onChange={setBookTitle} className="book-title-input" />
+        <input placeholder="Category" onChange={setBookCategory} className="book-category-input" />
+        <button type="button" onClick={submitBookToStore} className="btn add-book-button">Add Book</button>
       </form>
     </>
   );
