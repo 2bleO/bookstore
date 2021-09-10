@@ -9,10 +9,12 @@
 - React/JS
 - Redux
 - HTML & CSS
+# Screenshot
+![screenshot](screenshot.png)
 
 ## Live Demo
 
-- We are under construction
+[Live Demo Link](https://awesome-easley-c7d004.netlify.app/)
 
 ### Setup
 
