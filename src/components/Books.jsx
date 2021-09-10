@@ -46,7 +46,7 @@ const Books = () => {
         <h4 className="add-new-book">Add New Book</h4>
         <input placeholder="Title" onChange={setBookTitle} className="book-title-input" />
         <input placeholder="Category" onChange={setBookCategory} className="book-category-input" />
-        <button type="button" onClick={submitBookToStore} className="btn add-book-button">Add Book</button>
+        <button type="button" onClick={submitBookToStore} className="btn add-book-button">ADD BOOK</button>
       </form>
     </>
   );
