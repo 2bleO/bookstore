@@ -5,7 +5,7 @@ import { removeBook } from '../redux/books/books';
 
 const Book = ({ props }) => {
   const dispatch = useDispatch();
-  const { id, title, author } = props;
+  const { id, title } = props;
 
   const removeBookFromStore = (e) => {
     dispatch(removeBook({ id: e.target.id }));
@@ -14,8 +14,6 @@ const Book = ({ props }) => {
   return (
     <li>
       <span>{title}</span>
-      <span> by </span>
-      <span>{author}</span>
       <button id={id} type="button" onClick={removeBookFromStore}>Delete</button>
     </li>
   );
