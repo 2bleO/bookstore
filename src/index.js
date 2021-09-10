@@ -7,27 +7,30 @@ import { Provider } from 'react-redux';
 import store from './redux/configureStore';
 import Books from './components/Books';
 import Categories from './components/Categories';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <div>
-          <h1>Bookstore CMS</h1>
-          <ul>
-            <li><Link exact to="/">Books</Link></li>
-            <li><Link to="/categories">Categories</Link></li>
-          </ul>
+        <div className="app">
+          <div className="box">
+            <header className="header bg-white p-3 d-flex align-items-center mb-4">
+              <h1 className="header-text d-inline-block">BookStore CMS</h1>
+              <Link exact to="/" className="link">Books</Link>
+              <Link to="/categories" className="link">Categories</Link>
+            </header>
+            <Switch>
+              <Route exact path="/">
+                <Books />
+              </Route>
+              <Route path="/categories">
+                <Categories />
+              </Route>
+            </Switch>
+          </div>
         </div>
-        <Switch>
-          <Route exact path="/">
-            <Books />
-          </Route>
-          <Route path="/categories">
-            <Categories />
-          </Route>
-        </Switch>
       </Router>
     </Provider>
   </React.StrictMode>,
